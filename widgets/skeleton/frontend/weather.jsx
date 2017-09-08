@@ -30,15 +30,9 @@ class Weather extends React.Component {
       const weatherRequest = new XMLHttpRequest();
 
       weatherRequest.addEventListener("load", (response)  => {
-
-        // console.log(this.responseText);
         fn.setState({
           city: JSON.parse(weatherRequest.responseText).name,
           temperature: JSON.parse(weatherRequest.responseText).main.temp});
-        // console.log(this.state);
-        console.log(JSON.parse(weatherRequest.responseText).name);
-        console.log(JSON.parse(weatherRequest.responseText).main.temp);
-        console.log(fn.state);
       });
 
       weatherRequest.open("GET",
